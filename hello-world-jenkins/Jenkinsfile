@@ -54,20 +54,4 @@ pipeline {
     
   }
 }
-       stage('SonarQube'){
-		steps{
-				bat label: '', script: '''mvn sonar:sonar \
-				-Dsonar.host.url=http://localhost:9000 \
-				-Dsonar.login=75c1736028ebf73ae7352267f305ec535ac3e4e8'''
-			}
-   		}
-	
-	stage('Maven Package'){
-		steps{
-			echo 'Project packaging stage'
-			bat label: 'Project packaging', script: '''mvn package'''
-		}
-	} 		
-    
-  }
-}
+      
