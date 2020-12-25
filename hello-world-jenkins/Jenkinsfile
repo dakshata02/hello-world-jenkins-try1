@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {  
-     stage('Maven Compile'){
+      stage('Maven Compile'){
         steps{
-            def mvnHome=tool name: 'Maven', type: 'maven'
-            sh "${mvnHome}/bin/mvn package"
+            echo 'Project compile stage'
+            bat label: 'Compilation running', script: '''mvn compile'''
                }
     }
   
